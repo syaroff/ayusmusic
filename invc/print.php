@@ -36,6 +36,7 @@
                         <pre>Jumlah Tiket   = <?= $row['jumlah_tiket']?></pre>
                         <pre>Harga Satuan   = <?= $row['harga']?></pre>
                         <pre>Harga Total  = <?= $row['hatot']?></pre>
+                        <pre>Harga Metode Bayar  = <?= $row['nama_metode']?> | <?=$row['rekening']?></pre>
             <?php
                 }
             ?>

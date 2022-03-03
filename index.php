@@ -139,6 +139,19 @@
                             <input type="number" name="harga" id="harga" class="form-control" readonly>
                         </div>
                         <div class="col-12 mb-3">
+                            <label for="metode" class="fw-bold mb-3">Metode Pembayaran</label>
+                            <select name="metode" id="metode" class="form-control" required>
+                                <?php
+                                    $selMethod = mysqli_query($konek,"SELECT * FROM metode_bayar");
+                                    foreach($selMethod as $row) {
+                                ?>
+                                        <option value="<?=$row['id_bayar']?>"><?=$row['nama_metode']?> | <?=$row['rekening']?></option>
+                                <?php
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="col-12 mb-3">
                             <label for="total" class="fw-bold mb-3">Total Harga</label>
                             <input type="number" name="total" id="total" class="form-control" readonly>
                         </div>
@@ -156,7 +169,7 @@
     <?php
 
         if(isset($_POST['pesan'])) {
-            $tumbas = mysqli_query($konek,"INSERT INTO `order` (id_tiket,nama_pemesan,no_wa,harga,jumlah_tiket,status_order) VALUES ('$_POST[id_tiket]','$_POST[nama]','$_POST[wa]','$_POST[total]','$_POST[jumlah]',0)");
+            $tumbas = mysqli_query($konek,"INSERT INTO `order` (id_tiket,nama_pemesan,no_wa,harga,jumlah_tiket,status_order,id_bayar) VALUES ('$_POST[id_tiket]','$_POST[nama]','$_POST[wa]','$_POST[total]','$_POST[jumlah]',0,'$_POST[metode]')");
             
             $selIDorder = mysqli_query($konek,"SELECT * FROM `order` ORDER BY id_order DESC LIMIT 1");$rowIdOrder = mysqli_fetch_assoc($selIDorder);$id_order = $rowIdOrder['id_order'];
             

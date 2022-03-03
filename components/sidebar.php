@@ -19,7 +19,15 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="order.php" class="text-decoration-none fs-6 text-white"><i class="las la-hand-holding-usd"></i>Transaksi</a>
+                    <a href="#produk2" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-decoration-none fs-6 text-white "><i class="las la-hand-holding-usd"></i>Transaksi</a>
+                    <ul class="collapse list-unstyled" id="produk2">
+                        <li>
+                            <a href="metode.php" class="text-decoration-none text-white">Metode Bayar</a>
+                        </li>
+                        <li>
+                            <a href="order.php" class="text-decoration-none text-white">Pesanan</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
                     <a href="hasil.php" class="text-decoration-none fs-6 text-white"><i class="las la-money-bill"></i> Laporan Hasil</a>
